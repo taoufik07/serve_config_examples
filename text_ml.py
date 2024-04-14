@@ -57,8 +57,7 @@ class Summarizer:
         english_text: str = await http_request.json()
         summary = self.summarize(english_text)
 
-        translation_ref = await self.translator.translate.remote(summary)
-        translation = await translation_ref
+        translation = await self.translator.translate.remote(summary)
 
         return translation
 
